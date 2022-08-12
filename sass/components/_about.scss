@@ -1,0 +1,49 @@
+.about {
+  padding-top: 0;
+
+  @media screen and (max-width: calc($desktop - 1px)) {
+    display: none;
+  }
+}
+
+.about__list {
+  @extend %list;
+
+  display: flex;
+
+  gap: $indent-three;
+}
+
+.about__item {
+  position: relative;
+
+  flex-basis: calc((100% - $indent-three * ($items-one - 1)) / $items-one);
+}
+
+.about__img {
+  @extend %img;
+}
+
+.about__text {
+  position: absolute;
+  width: 100%;
+  height: 70px;
+
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 27px 0;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  text-align: center;
+  text-transform: uppercase;
+  color: $primaryBgColor;
+
+  background-color: $aboutOverlay;
+}

@@ -1,0 +1,60 @@
+.clients__list {
+  @extend %list;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: $indent-three;
+}
+
+.clients__item {
+  flex-basis: calc((100% - $indent-three * ($items-four - 1)) / $items-four);
+
+  @media screen and (min-width: $tablet) {
+    flex-basis: calc((100% - $indent-three * ($items-one - 1)) / $items-one);
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-basis: calc((100% - $indent-three * ($items-three - 1)) / $items-three);
+  }
+}
+
+.clients__link {
+  @extend %link;
+
+  display: flex;
+
+  width: 210px;
+  height: 92px;
+
+  align-items: center;
+  justify-content: center;
+
+  @include bordered(1px, $borderClients);
+  border-radius: 4px;
+
+  color: $borderClients;
+
+  transition: color $timingFunction, border $timingFunction;
+
+  @media screen and (min-width: $tablet) {
+    width: 226px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 170px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $accentColor;
+
+    @include bordered(1px, $accentColor);
+  }
+}
+
+.clients__icon {
+  fill: currentColor;
+}

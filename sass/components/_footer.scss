@@ -1,0 +1,245 @@
+.footer {
+  padding: 60px 0;
+
+  background: $additionalBgColor;
+}
+
+.footer__container {
+  @media screen and (max-width: calc($tablet - 1px)) {
+    text-align: center;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px)) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+    text-align: left;
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    align-items: baseline;
+  }
+}
+
+.footer-contacts {
+  @media screen and (min-width: $tablet) and (max-width: 1199px) {
+    display: inline-flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: inline-flex;
+    flex-direction: column;
+  }
+}
+
+.address {
+  @media screen and (max-width: calc($tablet - 1px)) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: inline-flex;
+    flex-direction: column;
+  }
+}
+
+.address__post {
+  display: inline-block;
+
+  margin-bottom: 8px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(24 / 14);
+  color: $primaryBgColor;
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 9px;
+  }
+}
+
+.address__email {
+  @extend %link;
+
+  margin-bottom: 8px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(24 / 14);
+  color: $footerLinkColor;
+
+  transition: color $timingFunction;
+
+  &:hover,
+  &:focus {
+    color: $primaryBgColor;
+  }
+
+  @media screen and (max-width: 1199px) {
+    display: inline-block;
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: inline-block;
+    margin-bottom: 9px;
+  }
+}
+
+.address__tel {
+  @extend %link;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(24 / 14);
+  color: $footerLinkColor;
+
+  transition: color $timingFunction;
+
+  &:hover,
+  &:focus {
+    color: $primaryBgColor;
+  }
+
+  @media screen and (max-width: calc($desktop - 1px)) {
+    display: inline-block;
+    margin-bottom: 60px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: inline-block;
+  }
+}
+
+.subscribe {
+  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px)) {
+    display: inline-flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-left: 70px;
+  }
+}
+
+.subscription {
+  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px)) {
+    text-align: center;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-left: 93px;
+  }
+}
+
+.footer-join-title {
+  display: inline-block;
+  margin-bottom: 20px;
+
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  font-weight: 700;
+  color: $primaryBgColor;
+
+  text-transform: uppercase;
+}
+
+.socials-list--footer {
+  @media screen and (max-width: calc($tablet - 1px)) {
+    margin-bottom: 60px;
+  }
+}
+
+.join-form__box {
+  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px)) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.join-form__input {
+  margin: 0;
+  padding: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 16px;
+
+  max-width: 358px;
+
+  height: 50px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: calc(20 / 16);
+  color: $footerLinkColor;
+
+  background-color: transparent;
+
+  @include bordered(1px, $footerJoin);
+
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+
+  transition: border-color $timingFunction;
+
+  outline: transparent;
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: calc(20 / 16);
+
+    color: $footerLinkColor;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $accentColor;
+  }
+
+  @media screen and (max-width: calc($desktop - 1px)) {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: $mobile) {
+    width: 358px;
+  }
+}
+
+.join-form__button {
+  @extend %button;
+
+  padding: 0;
+  margin: 0;
+
+  padding: 10px 28px 10px 29px;
+
+  @media screen and (min-width: $mobile) {
+    margin-left: 12px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.join-form__icon {
+  fill: currentColor;
+  margin-left: 10px;
+}

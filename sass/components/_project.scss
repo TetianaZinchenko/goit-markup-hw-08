@@ -1,0 +1,107 @@
+.project {
+  @extend %list;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $indent-three;
+  }
+}
+
+.project__item {
+  &:not(:last-child) {
+    @media screen and (max-width: calc($tablet - 1px)) {
+      margin-bottom: 30px;
+    }
+  }
+
+  transition: box-shadow $timingFunction;
+
+  &:hover {
+    outline: 1px solid $borderProject;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+
+  @media screen and (min-width: $tablet) {
+    flex-basis: calc((100% - $indent-three * ($items-four - 1)) / $items-four);
+  }
+  @media screen and (min-width: $desktop) {
+    flex-basis: calc((100% - $indent-three * ($items-one - 1)) / $items-one);
+  }
+}
+
+.project__link {
+  @extend %link;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.project__title {
+  margin-bottom: 4px;
+
+  color: $contactsColor;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: calc(36 / 18);
+  letter-spacing: 0.06em;
+}
+
+.project__text {
+  color: $primaryTextColor;
+  font-size: 16px;
+  line-height: calc(30 / 16);
+}
+
+.project__container {
+  @include bordered(1px, $borderColor);
+
+  padding: 20px 24px;
+
+  flex-grow: 1;
+}
+
+.project__overlay-text {
+  padding: 24px;
+
+  font-style: normal;
+  font-size: 18px;
+  line-height: calc(28 / 18);
+
+  color: $primaryBgColor;
+}
+
+.project__box {
+  position: relative;
+  overflow: hidden;
+}
+
+.project__img {
+  @extend %img;
+}
+
+.project__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $projectOverlay;
+
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform $timingFunction, opacity $timingFunction;
+
+  .project__item:hover & {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
